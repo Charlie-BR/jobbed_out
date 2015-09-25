@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150925150938) do
     t.string   "email",            null: false
     t.string   "crypted_password"
     t.string   "salt"
+    t.string   "first_name",       null: false
+    t.string   "last_name",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
