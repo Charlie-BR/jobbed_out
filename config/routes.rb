@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :jobs, :except => [:edit, :update, :destroy]
 
   get '/session' => 'session#create'
-  # post '/session' => 'session#check_login'
+  post '/session' => 'session#new'
   # login page and login processing
 
   # get '/jobs/:id' => 'jobs#show'

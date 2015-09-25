@@ -7,6 +7,7 @@ class SessionController < ApplicationController
 	
 	def new
 		# shouldn't need any logic here
+		@user = User.new
 	end
 
 	# def check_login
@@ -25,9 +26,10 @@ class SessionController < ApplicationController
 
 	def create
 		# handles and processes the login
-		if login(params[:email], params[:password])
-			redirect_back_or_to '/'
+		if @user = login(params[:email], params[:password])
+			redirect_back_or_to '/jobs'
 		else
+			# redirect_to '/jobs'
 			render :new
 			# send an error message along with a render
 			# rendering the login form again here to try to login again

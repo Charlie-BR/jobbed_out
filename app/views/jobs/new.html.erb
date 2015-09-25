@@ -1,9 +1,10 @@
-<% if @photo.errors.present? %>
-  <p><%= @photo.errors.full_messages.first %></p>
+<% if @job.errors.present? %>
+  <p><%= @job.errors.full_messages.first %></p>
 <% end %>
 
-<%= form_for @photo do |f| %>
+<%= form_for @job do |f| %>
   <%= f.text_field :title, :placeholder => "Title" %>
-  <%= f.text_field :path, :placeholder => "Path" %>
+  <%= f.text_field :post_url, :placeholder => "Path" %>
+  <%= f.text_field :user, :placeholder => "Username" %>
   <%= f.submit "Submit" %>
 <% end %>
