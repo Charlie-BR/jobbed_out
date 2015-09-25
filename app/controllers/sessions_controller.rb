@@ -1,6 +1,4 @@
-class SessionController < ApplicationController
-
-# login and logout logic here
+class SessionsController < ApplicationController
 	def login_form
 
     end

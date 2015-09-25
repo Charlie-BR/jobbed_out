@@ -16,7 +16,7 @@ class JobsController < ApplicationController
 	end
 
 	def create
-	    @job = Job.new(job_params.merge(user_id: @current_user.id))
+	    @job = Job.new(job_params) #(job_params.merge(user_id: @current_user.id))
 
 	    if @job.save
 	      redirect_to @job

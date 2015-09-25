@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
 
+	def index
+
+	end
+
 	def show
 	# creates a post
 

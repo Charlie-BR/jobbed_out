@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users, :except => [:index, :edit, :update, :destroy]
+  resources :users, :except => [:edit, :update, :destroy]
 
   resource :session, :only => [:new, :create, :destroy]
+
+  resource :sessions, :only => [:new, :create, :destroy]
 
   resources :jobs, :except => [:edit, :update, :destroy]
 
