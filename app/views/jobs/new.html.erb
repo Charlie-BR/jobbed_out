@@ -1,0 +1,9 @@
+<% if @photo.errors.present? %>
+  <p><%= @photo.errors.full_messages.first %></p>
+<% end %>
+
+<%= form_for @photo do |f| %>
+  <%= f.text_field :title, :placeholder => "Title" %>
+  <%= f.text_field :path, :placeholder => "Path" %>
+  <%= f.submit "Submit" %>
+<% end %>

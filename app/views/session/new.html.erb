@@ -1,1 +1,14 @@
 <!-- login form goes here -->
+
+<h3>Login Form</h3>
+<%= form_tag("/login", method: "post") do %>
+    <div>
+        <input type="text" name="email" placeholder="Enter your email address" />
+    </div>
+
+    <div>
+        <input type="password" name="password" placeholder="Enter your password" />
+    </div>
+
+    <%= submit_tag("Login") %>
+<% end %>
