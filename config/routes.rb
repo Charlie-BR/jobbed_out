@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
 
 
-  resources :users, :except => [:index, :edit, :update]
-  # up to us what we want on the Show action
+  resources :users, :except => [:index, :edit, :update, :destroy]
+
+  resource :session, :only => [:new, :create, :destroy]
+
+
+  # 1) show someone the form route
+
+  # 2) separate route to process the form
+    # does this person exist? if so, log them in
+
+  # 3) logout route
+
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
