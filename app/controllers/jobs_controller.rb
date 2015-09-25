@@ -2,13 +2,13 @@ class JobsController < ApplicationController
 	# before_action :photo_params, :only => [:create, :update]
 
 	def index
-    @jobs = @current_user.jobs
+    @jobs = Job.all
 
 	end
 
 
 	def show
-	    @job = Job.find(params[:id])
+	    @jobs = Job.all
 	end
 
 	def new

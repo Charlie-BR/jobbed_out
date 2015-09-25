@@ -1,1 +1,8 @@
-show.html.erb
+<ul>
+<% @jobs.each do |job| %>
+  <li>
+    <h3><%= job.title %></h3>
+    <h2> <%= job.post_url %> </h2>
+  </li>
+<% end %>
+</ul>
