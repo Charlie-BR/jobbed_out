@@ -36,6 +36,4 @@ ActiveRecord::Schema.define(version: 20150925163227) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "jobs", "users"
-
 end
