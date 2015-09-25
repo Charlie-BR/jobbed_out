@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post '/session' => 'session#new'
   # login page and login processing
 
+  root 'jobs#index'
+
   # get '/jobs/:id' => 'jobs#show'
   # show all jobs for particular user
 
