@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
-
   resources :users, :except => [:index, :edit, :update, :destroy]
 
   resource :session, :only => [:new, :create, :destroy]
 
+  resources :jobs, :except => [:edit, :update, :destroy]
 
+  get '/login' => 'login#login_form'
+  post '/login' => 'login#check_login'
+  # login page and login processing
+
+  # get '/jobs/:id' => 'jobs#show'
+  # show all jobs for particular user
+
+  # get '/jobs' => 'jobs#index'
   # 1) show someone the form route
 
   # 2) separate route to process the form
@@ -19,8 +27,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
