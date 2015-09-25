@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
 
 	def create
 		# handles and processes the login
+		 @user = User.new(user_params)
 		if @user = login(params[:email], params[:password])
 			redirect_back_or_to (:users)
 		else
@@ -32,6 +33,10 @@ class SessionsController < ApplicationController
 			# send an error message along with a render
 			# rendering the login form again here to try to login again
 		end
+	end
+
+	def user_params
+		params.require(:user).permit(:email, :password, :first_name, :last_name)
 	end
 
 	def destroy
