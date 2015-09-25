@@ -24,9 +24,9 @@ class SessionsController < ApplicationController
 
 	def create
 		# handles and processes the login
-		 @user = User.new(user_params)
-		if @user = login(params[:email], params[:password])
-			redirect_back_or_to (:users)
+		 # @user = User.new(user_params)
+		if login(params[:email], params[:password])
+			redirect_back_or_to (:jobs)
 		else
 			# redirect_to '/jobs'
 			render :new
@@ -35,9 +35,9 @@ class SessionsController < ApplicationController
 		end
 	end
 
-	def user_params
-		params.require(:user).permit(:email, :password, :first_name, :last_name)
-	end
+	# def user_params
+	# 	params.require(:user).permit(:email, :password, :first_name, :last_name)
+	# end
 
 	def destroy
 		logout
